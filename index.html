@@ -3,101 +3,132 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Augustine Nwafor | Developer</title>
+  <title>AUSTINO | Home</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
     }
 
-    header {
-      background-color: #0d1b2a;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5em;
-    }
-
-    nav {
-      background-color: #1b263b;
+    body {
+      min-height: 100vh;
+      background: linear-gradient(120deg, #1f1c2c, #928dab);
       display: flex;
       justify-content: center;
-      padding: 10px;
-    }
-
-    nav a {
+      align-items: center;
+      flex-direction: column;
+      overflow-y: auto;
       color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    section {
+      animation: bgShift 10s ease-in-out infinite alternate;
       padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .projects, .contact {
-      background-color: white;
-      border-radius: 8px;
-      padding: 30px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .contact input, .contact textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    .contact button {
-      background-color: #0077cc;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      cursor: pointer;
-      border-radius: 4px;
-      margin-top: 15px;
-    }
-
-    .quiz-button {
-      display: inline-block;
-      background: linear-gradient(45deg, #ff416c, #ff4b2b);
-      color: white;
-      padding: 14px 28px;
       text-align: center;
-      text-decoration: none;
+    }
+
+    @keyframes bgShift {
+      0% {
+        background: linear-gradient(120deg, #1f1c2c, #928dab);
+      }
+      100% {
+        background: linear-gradient(120deg, #ff5f6d, #ffc371);
+      }
+    }
+
+    h1 {
+      font-size: 5rem;
       font-weight: bold;
-      border: none;
-      border-radius: 30px;
-      margin-top: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.2s ease;
+      text-shadow: 0 0 30px rgba(255,255,255,0.4);
+      animation: fadeSlideIn 2s ease-out;
+      margin-bottom: 20px;
     }
 
-    .quiz-button:hover {
-      transform: scale(1.05);
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #0d1b2a;
+    .btn {
+      margin: 15px 10px;
+      padding: 15px 35px;
+      font-size: 1.2rem;
       color: white;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      text-decoration: none;
+      display: inline-block;
     }
-    </style>
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+    }
+
+    #bio {
+      max-width: 700px;
+      margin-top: 30px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    #contactInfo {
+      margin-top: 30px;
+      display: none;
+      font-size: 1.2rem;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    a {
+      color: #fffacd;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <!-- Your body content here -->
+
+  <!-- Brand Name -->
+  <h1>AUSTINO</h1>
+
+  <!-- Biography Section -->
+  <div id="bio">
+    <p>I specialize in a wide range of tech products: web designing, coding, building, and debugging.</p>
+  </div>
+
+  <!-- Buttons -->
+  <div>
+    <button class="btn" onclick="showContact()">Contact Me</button>
+    <a href="quiz.html" class="btn">Take My Quiz</a>
+  </div>
+
+  <!-- Contact Info (Revealed via JavaScript) -->
+  <div id="contactInfo">
+    <p>You can reach me at:</p>
+    <p>📞 <a href="tel:09164034021">09164034021</a></p>
+  </div>
+
+  <!-- JavaScript to Show Contact Info -->
+  <script>
+    function showContact() {
+      const contactDiv = document.getElementById('contactInfo');
+      contactDiv.style.display = 'block';
+    }
+  </script>
+
 </body>
 </html>
-
